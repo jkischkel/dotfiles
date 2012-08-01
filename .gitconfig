@@ -1,0 +1,6 @@
+[alias]
+  co = checkout
+  ci = commit
+[user]
+	name = jkischkel
+	email = jan.kischkel@wooga.com
