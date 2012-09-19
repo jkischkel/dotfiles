@@ -1,0 +1,24 @@
+#!/usr/bin/ruby
+
+file_name = ARGV.first
+raise "no filename given!" if file_name.nil?
+raise "file #{ file_name } already exists!" if File.exists?(file_name)
+
+package = ARGV.size > 1 ? ARGV.last : 'main'
+
+template = <<EOT
+package #{ package }
+
+import "fmt"
+
+func main() {
+  fmt.Println()
+}
+
+EOT
+
+
+File.open(file_name, "a") do | file |
+  template.each_line { | line | file.write(line) }
+end
+
