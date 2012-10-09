@@ -1,6 +1,10 @@
 [alias]
+  st = status
   co = checkout
   ci = commit
+  cl = clone
 [user]
-	name = jkischkel
-	email = jan.kischkel@wooga.com
+  name = jkischkel
+  email = jan.kischkel@wooga.com
+[color]
+  ui = auto
