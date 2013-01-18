@@ -6,6 +6,12 @@ alias l=ls
 # some more aliases
 alias mkcd=". ~/skript/mcd"
 
+# locale settings
+export LC_ALL=en_US.UTF-8                                                                               
+export LC_CTYPE=en_US.UTF-8                                                     
+export LANG=en_US.UTF-8
+
+# path constants
 export HOME=/Users/jankischkel
 export APPS_HOME=$HOME/Apps
 export MYSQL_HOME=/usr/local/mysql
@@ -21,6 +27,7 @@ PATH=${PATH}:$MYSQL_HOME/bin:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$MAC_VIM_HOME:~/S
 export PS1="\[\033[02;32m\]\w \$\[\033[00m\] "
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+
 
 # set rvm env
 # rvm use ruby-1.8.7-p334@rails235
