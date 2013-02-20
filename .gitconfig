@@ -1,8 +1,13 @@
 [alias]
+  b = branch
   st = status
   co = checkout
   ci = commit
   cl = clone
+  rb = rebase
+  rbi = rebase -i
+  cp = cherry-pick
+  stashl = stash list
 [user]
   name = jkischkel
   email = jk@soundcloud.com
