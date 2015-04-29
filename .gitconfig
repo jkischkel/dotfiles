@@ -1,6 +1,6 @@
 [alias]
   b = branch
-  st = status
+  st = status -sb
   co = checkout
   ci = commit
   cl = clone
@@ -8,12 +8,11 @@
   rbi = rebase -i
   cp = cherry-pick
   stashl = stash list
+  pl = pull --rebase --prune
 [user]
   name = jkischkel
   email = jk@soundcloud.com
 [color]
   ui = auto
 [push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
   default = current
