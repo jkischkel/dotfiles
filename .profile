@@ -4,7 +4,9 @@ alias la="ls -lha"
 alias l=ls
 
 # some more aliases
-alias mkcd=". ~/skript/mcd"
+alias mvim="open -a MacVim"
+alias json="python -mjson.tool"
+alias j7="/usr/libexec/java_home -v 1.7.0_17 --exec javac -version"
 
 # locale settings
 export LC_ALL=en_US.UTF-8
@@ -12,22 +14,31 @@ export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # path constants
+export EDITOR=vi
 export HOME=/Users/jankischkel
 export APPS_HOME=$HOME/Apps
-export MYSQL_HOME=/usr/local/mysql
+export MYSQL=/usr/local/bin/mysql
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
-export GROOVY_HOME=$APPS_HOME/groovy
-export GRAILS_HOME=$APPS_HOME/grails
-export SCALA_HOME=$APPS_HOME/scala
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export GRADLE_OPTS="-Dorg.gradle.daemon=true"
 export MAC_VIM_HOME=/Applications/MacVim.app/Contents/MacOS
-export MAATKIT_HOME=$APPS_HOME/maatkit-7540
+export SCALA_HOME=/usr/local/Cellar/scala/2.10.0/libexec
+export SBT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled" 
 
-PATH=${PATH}:$MYSQL_HOME/bin:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$MAC_VIM_HOME:~/Skript:$APPS_HOME/s3cmd:$SCALA_HOME/bin
+source ~/.git-completion.bash
+
+PATH=${PATH}:$MYSQL:$GROOVY_HOME/bin:$GRAILS_HOME/bin:$MAC_VIM_HOME:~/Skript:$APPS_HOME/s3cmd:$SCALA_HOME/bin:$HOME/Script:/usr/local/sbin:$HOME/bin:$CASSANDRA_HOME/bin:$CARGO_HOME/bin:$DERBY_HOME/bin:$GLASSFISH_HOME/glassfish/bin
 
 export PS1="\[\033[02;32m\]\w \$\[\033[00m\] "
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+rvminit() {
+  rvm use 2.1.0@$(basename $(pwd)) --create --rvmrc
+  source cd .
+}
 
+derby() {
+  java -jar $DERBY_HOME/lib/derbyrun.jar server start
+}
 
 # add marks support
 export MARKPATH=$HOME/.marks
@@ -43,6 +54,3 @@ function unmark {
 function marks {
     ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\-/g' && echo
 }
-
-# set rvm env
-# rvm use ruby-1.8.7-p334@rails235
