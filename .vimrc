@@ -11,6 +11,7 @@ syntax on
 
 filetype plugin indent on
 
+set paste
 set ruler " Always show current positions along the bottom
 set noerrorbells " don't make noise
 set showmatch " show matching brackets
