@@ -9,6 +9,8 @@
   cp = cherry-pick
   stashl = stash list
   pl = pull --rebase --prune
+  glog = log --graph --stat --all --decorate=full
+  slog = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [user]
   name = jkischkel
   email = jk@soundcloud.com
