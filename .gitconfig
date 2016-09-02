@@ -14,7 +14,7 @@
   slog = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [user]
   name = jkischkel
-  email = jk@soundcloud.com
+  email = 
 [color]
   ui = auto
 [push]
